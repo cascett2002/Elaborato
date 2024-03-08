@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title> Recupera Password </title>
+</head>
+
+<body>
+    <center>
+            <h3>
+                <form name="recpass" method="post" action="sendEmail.php">
+                 <center> <br><br>  
+                    <font face="Helvetica " size="5">Inserisci le credenziali per il recupero</font><br><br>
+                    <label for="USERNAME" align="left"></label>
+                    <input type="text" name="username" placeholder="Inserisci qui il tuo username" size="30" maxlength="50" required> <br>
+                    <label for="EMAIL" align="left"></label>
+                    <input type="email" name="email" placeholder="Inserisci qui la tua mail" required><br>
+                    <input type="submit" value="Conferma"> <br> <input type="reset" value="Cancella">
+              </center>   </form>
+    </center>
+</body>
+
+</html>
+
+<style>
+    /* Style all input fields */
+    input {
+      width: 100%;
+      
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      max-width: 500px;
+
+    }
+    
+    /* Style the submit button */
+    
+    
+    /* Style the container for inputs */
+    body {
+      background: #111;
+      background: -webkit-linear-gradient(top left, #acd6e8 0%, #fff 100%);
+      background: -moz-linear-gradient(top left, #acd6e8 0%, #fff 100%);
+      background: -o-linear-gradient(top left, #acd6e8 0%, #fff 100%);
+      background: linear-gradient(to bottom right, #acd6e8 0%, #fff 100%);
+    
+      padding: 20px;
+    }
+    
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+      display:none;
+      background: #f1f1f1;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: 10px;
+    }
+    
+    #message p {
+      padding: 10px 35px;
+      font-size: 18px;
+    }
+    
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+      color: green;
+    }
+    
+    .valid:before {
+      position: relative;
+      left: -35px;
+      content: "&#10004;";
+    }
+    
+    /* Add a red text color and an "x" icon when the requirements are wrong */
+    .invalid {
+      color: red;
+    }
+    
+    .invalid:before {
+      position: relative;
+      left: -35px;
+      content: "&#10006;";
+    }
+    </style>
+    

@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>Registrazione</title>
+</head>
+<link rel="stylesheet" href="css/registrazione.scss">
+<div class="container">
+    <div class="wrapper">
+        <div class="button">
+<body>
+ 
+    
+
+<center>
+<form method="post" name="regform">
+    <br><br>
+<label for="titolo">Riempi i campi per completare la registrazione</label> <br><br>
+<label class="campi">Username</label> <br> <input type="text" name="username" maxlenght="50" size="30"> <br>
+<label class="campi">Nome</label> <br> <input type="text" name="nome" maxlenght="50" size="30"> <br>
+<label class="campi">Cognome</label> <br> <input type="text" name="cognome" maxlenght="50" size="30"> <br>
+<label class="campi">Password</label> <br> <input type="password" name="password" maxlenght="50" size="30"> <br>
+<label class="campi">Conferma Password</label> <br> <input type="password" name="confpass" maxlenght="50" size="30"> <br>
+<label class="campi">Email</label> <br> <input type="text" name="email" maxlenght="100" size="30"> <br>
+<label class="campi">Telefono</label> <br> <input type="text" name="telefono" maxlenght="20" size="30"> <br>
+<label class="campi">Codice Fiscale</label> <br> <input type="text" name="cf" maxlenght="16" size="30"> <br>
+<label class="campi">Data di nascita</label> <br> <input type="date" name="nascita"> <br>
+<button type="reset" class="btn"> Cancella </button>
+<button type="submit" class="btn" onClick="registrati()"> Registrati </button> <br>
+Sei gia' registrato?<a href="login.html">Accedi</a>
+</form>
+</center>
+</div>
+</body>
+</html>
+
+<script language="javascript">
+    function registrati() {
+        var username=document.regform.username.value;
+        var password=document.regform.password.value;
+        var confpass=document.regform.confpass.value;
+        var nome=document.regform.nome.value;
+        var cognome=document.regform.cognome.value;
+        var mail=document.regform.email.value;
+        var tel=document.regform.telefono.value;
+        var nascita=document.regform.nascita.value;
+        var cf=document.regform.cf.value;
+        var mail_reg_exp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-]{2,})+\.)+([a-zA-Z0-9]{2,})+$/;
+        
+        if ((username=="")||(username=="undefined")) {
+            alert("Il campo username e' obbligatorio");
+            document.regform.username.focus();
+            return false;
+        }
+        
+        else if ((password=="")||(password=="undefined")) {
+            alert("Il campo password e' obbligatorio");
+            document.regform.password.focus();
+            return false;
+        }
+        
+        else if ((confpass=="")||(confpass=="undefined")) {
+            alert("Il campo conferma password e' obbligatorio");
+            document.regform.confpass.focus();
+            return false;
+        }
+        
+        else if ((nome=="")||(nome=="undefined")) {
+            alert("Il campo nome e' obbligatorio");
+            document.regform.nome.focus();
+            return false;
+        }
+        
+        else if ((cognome=="")||(cognome=="undefined")) {
+            alert("Il campo cognome e' obbligatorio");
+            document.regform.cognome.focus();
+            return false;
+        }
+        
+        else if ((mail=="")||(mail=="undefined")) {
+            alert("Il campo E-mail e' obbligatorio");
+            document.regform.mail.focus();
+            return false;
+        }
+        
+        else if ((tel=="")||(tel=="undefined")) {
+            alert("Il campo telefono e' obbligatorio");
+            document.regform.telefono.focus();
+            return false;
+        }
+        
+        else if ((nascita=="")||(nascita=="undefined")) {
+            alert("Il campo nascita e' obbligatorio");
+            document.regform.nascita.focus();
+            return false;
+        }
+    
+        else if ((cf=="")||(cf=="undefined")) {
+            alert("Il campo codice fiscale e' obbligatorio");
+            document.regform.cf.focus();
+            return false;
+        }
+        
+        else if (password!=confpass) {
+            alert("Le password non coincidono!");
+            document.regform.password.value="";
+            document.regform.confpass.value="";
+            return false;
+        }
+        
+        else if (!mail_reg_exp.test(mail)) {
+            alert("Formato e-mail non valido!");
+            return false;
+        }
+        
+        else if (!valpass(password)) {
+            return false;
+        }
+        
+        else if (!(tel.length==10)) {
+            alert("Inserire un numero di telefono valido");
+            return false;
+        }
+        
+        else {
+            document.regform.action="registrazione.php";
+            document.regform.submit();
+        }
+    
+    }
+    
+    function valpass(pass) {
+        lunghezza=pass.length;
+        
+        if (!(pass.match(/\d/))) {
+        alert ("La password deve contenere almeno un numero");
+        return false;
+        }
+        
+        if (!(pass.match(/[A-Z]/))) {
+        alert ("La password deve contenere almeno una lettera maiuscola");
+        return false;
+        }
+    
+        if (!(pass.match(/[a-z]/))) {
+        alert ("La password deve contenere almeno una lettera minuscola");
+        return false;
+        }
+    
+        if (!(pass.match(/\W+/))) {
+        alert ("La password deve contenere almeno un carattere speciale");
+        return false;
+        }
+        
+        if (!(lunghezza >= 8)) {
+        alert ("La password deve contenere almeno 8 caratteri");
+        return false;
+        }
+    
+        return true;
+    }
+    </script>

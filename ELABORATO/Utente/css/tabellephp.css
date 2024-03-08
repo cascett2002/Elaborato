@@ -1,0 +1,17 @@
+body{
+    background: #ACD6E8;
+    margin-left: 20px;
+}
+
+td{
+text-emphasis-color: #ACD6E8;
+border:25px solid #fff;
+width:1px;
+white-space:unset;
+}
+
+td input {
+width: 100%;
+box-sizing: border-box;
+
+}

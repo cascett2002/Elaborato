@@ -1,0 +1,54 @@
+
+<html>
+
+<head>
+    <title>LoginAssistenza</title>
+</head>
+<link rel="stylesheet" href="css/login.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+<body>
+
+    <form method="post" action="login.php">
+        <br><br><br><br><br><br><br> <center>
+        <label for="titolo">Effettua il login al nostro sito</label> <br>
+        <input type="text" name="username" maxlength="500" size="50" placeholder="Username"> <br>
+        <input type="password" name="pass" maxlength="500" size="50" placeholder="Password"> <br>
+        <button type="reset" class="btn"> Pulisci </button>
+        <button type="submit" class="btn"> Login </button> <br>
+        Stai accedendo come assistente?<input type="checkbox" name="Tipologia" value="M"><br>
+        Hai dimenticato la password? Clicca <a href="recpass.html">qui</a>. <br>
+        Non ti sei ancora registrato? <a href="registrazione.html">Registrati</a>.
+
+
+    </form>
+    </div>
+</body>
+
+</html>
+  
+
+<script language="javascript">
+    function login() {
+        var username=document.loginform.username.value;
+        var password=document.loginform.password.value;
+        
+        if ((username=="")||(username=="undefined")) {
+            alert("Il campo username e' obbligatorio");
+            document.loginform.username.focus();
+            return false;
+        }
+        
+        else if ((password=="")||(password=="undefined")) {
+            alert("Il campo password e' obbligatorio");
+            document.loginform.password.focus();
+            return false;
+        }
+        
+        else {
+            document.loginform.action="login.php";
+            document.loginform.submit();
+        }
+    }
+    </script>
